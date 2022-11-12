@@ -1,0 +1,85 @@
+{% extends "proyectoApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+   <!-- Heading -->
+
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'proyectoApp/img/descuento.png' %}" alt="" style="width: 60%;">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper"></span>
+            <span class="section-heading-lower">Descuentos</span>
+          </h2>
+          <p class="mb-3">Hasta 50% de descuento
+          </p>
+          <p class="mb-3">Valido del 11 al 31 de octubre del 2022.
+          </p>
+          <p class="mb-3">*Valido en estilos seleccionados
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'proyectoApp/img/zapateria2.png' %}" alt="" style="width: 60%;">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper"></span>
+            <span class="section-heading-lower">El mejor calzado</span>
+          </h2>
+          <p class="mb-3">Contamos con servicio a domicilio. Envíos a Q22 en Ciudad de Guatemala, envíos departamentales Q27.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'proyectoApp/img/z3.png' %}" alt="" style="width: 60%;">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper"></span>
+            <span class="section-heading-lower">Diferentes estilos</span>
+          </h2>
+          <p class="mb-3">Para hombre y para mujer.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper"></span>
+                <span class="section-heading-lower">Acerca de nosotros</span>
+              </h2>
+              <p class="mb-0">Desde el principio, hemos tenido un solo enfoque: crear calzados cómodos y de tendencia a un buen precio. Nos hemos adaptado al mundo cambiante que nos rodea para brindar a todos acceso a los mejores estilos y marcas. </p>
+              <p class="mb-0">Seguimos brindando comodidad, con los estilos adecuados, al mejor precio. </p>
+              <p class="mb-0">Ya sea que esté buscando zapatos de mujer elegantes, obsesionado con zapatos deportivos o buscando estilos que se adapten a su familia, somos el recurso confiable para zapatos. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
+   

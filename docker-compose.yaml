@@ -1,0 +1,83 @@
+version: "3.5"
+
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_DB: proyecto
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Mishito135
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+  
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: bmmedina026@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: Mishito123
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+
+    ports:
+      - "5050:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  django_app:
+    build: .
+    environment:
+      - DB_HOST=db
+      - DB_NAME=proyecto
+      - DB_USER=postgres
+      - DB_PASSWORD=Mishito135
+    volumes:
+      #- web-django:/usr/src/app
+      #- web-static:/usr/src/app/static
+      #- web-media:/usr/src/app/media
+      #- static:/code/proyectoApp/static/
+      #- static:/code/proyectoApp/img/
+      - .:/usr/src/app
+      - static:/usr/src/app/static
+      - media:/usr/src/app/media
+
+    ports:
+      - "8000:8000"
+    networks:
+      - postgres
+    depends_on:
+      - pgadmin
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  web-django:
+  web-static:
+  web-media:
+  postgres:
+  pgadmin:
+  static:
+  media:
+  perfil: 
+  app:
+
+#version: '3.9'
+
+#services:
+ #django:
+  #image: django-docker:0.0.1
+  #build: .
+  #ports: 
+   #- "8080:8080"
